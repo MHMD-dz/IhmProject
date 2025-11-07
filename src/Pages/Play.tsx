@@ -1,13 +1,19 @@
+import Levels from "../Component/Play/Levels";
+import Title from "../Component/HomePageC/Title"
+import Laila from "../Component/HomePageC/Laila"
 
-import { Link } from 'react-router-dom'
-
-const Notfound = () => {
+const Play = () => {
   return (
-    <div className='flex flex-col gap-2.5'> 
-        404 not found
-        <Link to="/">Go to Home Page</Link> 
+    <div className="min-h-screen bg-linear-to-br from-blue-400 to-blue-200  p-6 text-cente ">
+      <Title title="🎮 Let's Play 🎮" />
+      <Laila 
+          title="Let's Begin, Eco-Hero! 🦸"
+          text="Welcome back! Every level you complete makes Earth happier. Which environment would you like to clean up first?"
+          lailaImage="/LailaPl.png"
+          />
+      <Levels/>
     </div>
   )
 }
 
-export default Notfound
+export default Play
