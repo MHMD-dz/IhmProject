@@ -7,8 +7,11 @@ import LoseScreen from './LoseScreen';
 interface GameAreaProps {
   onStatsUpdate: (stats: { score?: number; timeLeft?: number; lives?: number }) => void;
   levelId: number;
+  // tokens: when these numbers change the component reacts (restart / toggle pause)
+  restartToken?: number;
+  pauseToken?: number;
 }
-const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId}) => {
+const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId, restartToken, pauseToken }) => {
 
     const [score, setScore] = useState(0);
     const [timeLeft, setTimeLeft] = useState(60);
@@ -131,13 +134,22 @@ useEffect(() => {
         startGame();
     }, []);
 
-    const checkWinCondition = () => {
-    if (score >= 100) { // 👈 يمكنك تغيير الرقم
-      endGame(true);
-    }
-  };
+    // When parent increments restartToken, start a new game
+    useEffect(() => {
+      if (typeof restartToken === 'number') {
+        startGame();
+      }
+    }, [restartToken]);
 
-    // Countdown timer: decrease timeLeft each second and end the game when it reaches 0
+    
+    useEffect(() => {
+      if (typeof pauseToken === 'number') {
+        setIsPlaying(prev => !prev);
+      }
+    }, [pauseToken]);
+
+
+
     useEffect(() => {
       if (!isPlaying || timeLeft <= 0) return;
 
