@@ -5,10 +5,16 @@ import WinScreen from './WinScreen';
 import LoseScreen from './LoseScreen';
 
 interface GameAreaProps {
-  onStatsUpdate: (stats: { score?: number; timeLeft?: number; lives?: number }) => void;
+  onStatsUpdate: (stats: { score?: number; timeLeft?: number; lives?: number ; scoreToWin?: number }) => void;
   levelId: number;
   restartToken?: number;
   pauseToken?: number;
+}
+
+type levelData ={
+  scoreToWin: number;
+  fallingSpeed: number;
+  spawnRate: number;
 }
 const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId, restartToken, pauseToken }) => {
 
@@ -19,11 +25,17 @@ const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId, restartTok
     const [fallingItems, setFallingItems] = useState<FallingItem[]>([]);
     const [showWinScreen, setShowWinScreen] = useState(false);
     const [showLoseScreen, setShowLoseScreen] = useState(false);
+    const [levelData, setLevelData] = useState<levelData>({
+        scoreToWin: 100, 
+        fallingSpeed: 2,
+        spawnRate: 1500,
+    });
+
 
 
     useEffect(() => {
-        onStatsUpdate({ score, timeLeft, lives });
-    }, [score, timeLeft, lives]);
+        onStatsUpdate({ score, timeLeft, lives , scoreToWin : levelData.scoreToWin });
+    }, [score, timeLeft, lives , levelData.scoreToWin]);
 
     interface FallingItem {
         id: number;
@@ -35,11 +47,46 @@ const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId, restartTok
 
     const levelItems = getLevelItems(levelId);
 
-   const startGame = () => {
+    useEffect(() => {
+        switch (levelId) {
+            case 1:
+                setLevelData({
+                    scoreToWin: 100,
+                    fallingSpeed: 2,
+                    spawnRate: 1500,
+                });
+                break;
+            case 2:
+                setLevelData({
+                    scoreToWin: 130,
+                    fallingSpeed: 2.25,
+                    spawnRate: 1200,
+                });
+                break;
+            case 3:
+                setLevelData({
+                    scoreToWin: 170,
+                    fallingSpeed: 2.5,
+                    spawnRate: 1000,
+                });
+                break;
+            case 4:
+            default:
+                setLevelData({
+                    scoreToWin: 200,
+                    fallingSpeed: 2.75,
+                    spawnRate: 800,
+                });
+                break;
+        }
+    }, [levelId]);
+
+   const startGame = (isInitialStart: boolean) => {
     setScore(0);
     setLives(3);
     setTimeLeft(600);
-    setIsPlaying(true);
+    setIsPlaying(isInitialStart);
+    setFallingItems([]); 
     };
 
 
@@ -51,7 +98,7 @@ const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId, restartTok
         const updatedItems = prev.map(fallingItem => {
             if (!fallingItem.isFalling) return fallingItem;
             
-            const newY = fallingItem.position.y + 2; 
+            const newY = fallingItem.position.y + levelData.fallingSpeed; 
             
             
             if (newY > 100) {
@@ -110,7 +157,7 @@ useEffect(() => {
     };
 
     setFallingItems((prev) => [...prev, newItem]);
-  }, 1500); 
+  }, levelData.spawnRate); 
 
   return () => clearInterval(spawnInterval);
 }, [isPlaying]);
@@ -130,12 +177,12 @@ useEffect(() => {
     };
 
     useEffect(() => {
-        startGame();
+        startGame(true); // Initial start - game starts playing immediately
     }, []);
 
     useEffect(() => {
       if (typeof restartToken === 'number') {
-        startGame();
+        startGame(false); // Restart - game starts paused
       }
     }, [restartToken]);
 
@@ -165,11 +212,10 @@ useEffect(() => {
     }, [isPlaying, timeLeft]);
 
     useEffect(() => {
-      const WIN_SCORE = 100;
-      if (score >= WIN_SCORE && isPlaying) {
+      if (score >= levelData.scoreToWin && score > 0 && isPlaying) {
         endGame(true);
       }
-    }, [score, isPlaying]);
+    }, [score, isPlaying, levelData.scoreToWin]);
 
 
     const endGame = (won: boolean) => {
@@ -184,7 +230,7 @@ useEffect(() => {
     const handleRestart = () => {
         setShowWinScreen(false);
         setShowLoseScreen(false);
-        startGame();
+        startGame(false); // Restart from win/lose screen - game starts paused
     };
 
   return (
@@ -235,7 +281,7 @@ useEffect(() => {
                 onRestart={handleRestart}
             />
             )}
-            
+
             {showLoseScreen && (
             <LoseScreen 
               score={score}

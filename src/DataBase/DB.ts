@@ -12,14 +12,19 @@ export interface Bin {
   type: 'organic' | 'recycling' | 'trash';
   color: string;
 }
-
 export const kitchenItems: WasteItem[] = [
-  { id: 1, name: 'Banana', type: 'organic', emoji: '🍌'},
-  { id: 2, name: 'Apple', type: 'organic', emoji: '🍎'},
-  { id: 3, name: 'Egg Shell', type: 'organic', emoji: '🥚'},
-  { id: 4, name: 'Plastic Bottle', type: 'recycling', emoji: '🥤'},
-  { id: 5, name: 'Can', type: 'recycling', emoji: '🥫'},
-  { id: 6, name: 'Battery', type: 'trash', emoji: '🔋'},
+  { id: 1, name: 'Banana', type: 'organic', emoji: '🍌' },
+  { id: 2, name: 'Apple', type: 'organic', emoji: '🍎' },
+  { id: 3, name: 'Egg Shell', type: 'organic', emoji: '🥚' },
+  { id: 4, name: 'Plastic Bottle', type: 'recycling', emoji: '🥤' },
+  { id: 5, name: 'Can', type: 'recycling', emoji: '🥫' },
+  { id: 6, name: 'Battery', type: 'trash', emoji: '🔋' },
+  { id: 25, name: 'Tea Bag', type: 'organic', emoji: '🫖' },
+  { id: 26, name: 'Orange Peel', type: 'organic', emoji: '🍊' },
+  { id: 27, name: 'Glass Jar', type: 'recycling', emoji: '🫙' },
+  { id: 28, name: 'Plastic Fork', type: 'trash', emoji: '🍴' },
+  { id: 29, name: 'Milk Carton', type: 'recycling', emoji: '🥛' },
+  { id: 30, name: 'Used Tissue', type: 'trash', emoji: '🧻' },
 ];
 
 export const schoolItems: WasteItem[] = [
@@ -29,8 +34,13 @@ export const schoolItems: WasteItem[] = [
   { id: 10, name: 'Lunch Box', type: 'recycling', emoji: '🍱' },
   { id: 11, name: 'Apple Core', type: 'organic', emoji: '🍏' },
   { id: 12, name: 'Broken Pen', type: 'trash', emoji: '🖊️' },
+  { id: 31, name: 'Ruler', type: 'trash', emoji: '📏' },
+  { id: 32, name: 'Plastic Wrapper', type: 'trash', emoji: '🎁' },
+  { id: 33, name: 'Juice Box', type: 'recycling', emoji: '🧃' },
+  { id: 34, name: 'Eraser Shavings', type: 'trash', emoji: '💨' },
+  { id: 35, name: 'Apple Peel', type: 'organic', emoji: '🍎' },
+  { id: 36, name: 'Staple', type: 'recycling', emoji: '📎' },
 ];
-
 
 export const parkItems: WasteItem[] = [
   { id: 13, name: 'Leaf', type: 'organic', emoji: '🍂' },
@@ -39,8 +49,13 @@ export const parkItems: WasteItem[] = [
   { id: 16, name: 'Glass Bottle', type: 'recycling', emoji: '🍶' },
   { id: 17, name: 'Banana Peel', type: 'organic', emoji: '🍌' },
   { id: 18, name: 'Chip Bag', type: 'trash', emoji: '🥔' },
+  { id: 37, name: 'Twig', type: 'organic', emoji: '🌿' },
+  { id: 38, name: 'Soda Can', type: 'recycling', emoji: '🥫' },
+  { id: 39, name: 'Snack Wrapper', type: 'trash', emoji: '🍫' },
+  { id: 40, name: 'Plastic Cup', type: 'trash', emoji: '🥤' },
+  { id: 41, name: 'Paper Napkin', type: 'recycling', emoji: '🧻' },
+  { id: 42, name: 'Tree Bark', type: 'organic', emoji: '🌰' },
 ];
-
 
 export const cityItems: WasteItem[] = [
   { id: 19, name: 'Newspaper', type: 'recycling', emoji: '📰' },
@@ -49,7 +64,14 @@ export const cityItems: WasteItem[] = [
   { id: 22, name: 'Coffee Cup', type: 'trash', emoji: '☕' },
   { id: 23, name: 'Battery', type: 'trash', emoji: '🔋' },
   { id: 24, name: 'Plastic Container', type: 'recycling', emoji: '🧴' },
+  { id: 43, name: 'Plastic Straw', type: 'trash', emoji: '🥢' },
+  { id: 44, name: 'Pizza Box', type: 'recycling', emoji: '🍕' },
+  { id: 45, name: 'Broken Glass', type: 'trash', emoji: '🪞' },
+  { id: 46, name: 'Newspaper Roll', type: 'recycling', emoji: '🧻' },
+  { id: 47, name: 'Food Waste', type: 'organic', emoji: '🍽️' },
+  { id: 48, name: 'Metal Cap', type: 'recycling', emoji: '🥇' },
 ];
+
 
 
 export const bins: Bin[] = [

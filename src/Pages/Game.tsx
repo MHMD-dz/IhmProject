@@ -8,6 +8,7 @@ const Game = () => {
     score: 0,
     timeLeft: 0,
     lives: 0,
+    scoreToWin: 0,
   });
 
   const [restartToken, setRestartToken] = useState(0);
@@ -22,10 +23,11 @@ const Game = () => {
           Time={gameStats.timeLeft}
           Score={gameStats.score}
           Lives={gameStats.lives}
+          scoreToWin={gameStats.scoreToWin}
           />
         <GameArea 
           onStatsUpdate={updateGameStats}
-          levelId={1}
+          levelId={2}
           restartToken={restartToken}
           pauseToken={pauseToken}
         />
