@@ -1,6 +1,8 @@
 import LailaWel from '../../../public/LailaWel.png'
 import LailaEX from '../../../public/LailaEx.png'
 import LailaPl from '../../../public/LailaPl.png'
+import LailaSad from '../../../public/LailaSad.png'
+import LailaHappy from '../../../public/LailaHappy.png'
 
 
 

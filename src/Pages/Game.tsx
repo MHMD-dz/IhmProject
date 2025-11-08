@@ -10,7 +10,6 @@ const Game = () => {
     lives: 0,
   });
 
-  // tokens used to signal child component (GameArea) to restart or toggle pause
   const [restartToken, setRestartToken] = useState(0);
   const [pauseToken, setPauseToken] = useState(0);
 

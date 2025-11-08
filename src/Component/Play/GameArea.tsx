@@ -7,7 +7,6 @@ import LoseScreen from './LoseScreen';
 interface GameAreaProps {
   onStatsUpdate: (stats: { score?: number; timeLeft?: number; lives?: number }) => void;
   levelId: number;
-  // tokens: when these numbers change the component reacts (restart / toggle pause)
   restartToken?: number;
   pauseToken?: number;
 }
@@ -134,7 +133,6 @@ useEffect(() => {
         startGame();
     }, []);
 
-    // When parent increments restartToken, start a new game
     useEffect(() => {
       if (typeof restartToken === 'number') {
         startGame();
@@ -166,7 +164,6 @@ useEffect(() => {
       return () => clearInterval(timer);
     }, [isPlaying, timeLeft]);
 
-    // Win condition: watch score and end the game when the threshold is reached
     useEffect(() => {
       const WIN_SCORE = 100;
       if (score >= WIN_SCORE && isPlaying) {
@@ -199,7 +196,6 @@ useEffect(() => {
                 <h2 className="text-2xl font-bold text-gray-800 mb-2">Catch the falling items!</h2>
             </div>
 
-            {/* منطقة السقوط */}
             <div className="relative h-[45vh] bg-blue-50 rounded-2xl mb-8 border-2 border-dashed border-blue-200 overflow-hidden">
                 {fallingItems.map(fallingItem => (
                 <div
@@ -239,8 +235,7 @@ useEffect(() => {
                 onRestart={handleRestart}
             />
             )}
-
-            {/* شاشة الخسارة */}
+            
             {showLoseScreen && (
             <LoseScreen 
               score={score}
