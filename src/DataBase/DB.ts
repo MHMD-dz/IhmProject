@@ -90,3 +90,21 @@ export const getLevelItems = (levelId: number): WasteItem[] => {
     default: return kitchenItems;
   }
 }
+
+
+
+// إضافة أنواع الدروس
+export interface Lesson {
+  title: string;
+  content: string;
+  image: string;
+}
+
+export interface QuizQuestion {
+  question: string;
+  options: {
+    emoji: string;
+    text: string;
+    correct: boolean;
+  }[];
+}

@@ -13,8 +13,8 @@ const Levels = () => {
   const [levels, setLevels] = useState<Level[]>([
     {id: 1, name: 'Kitchen', icon: '🍴', difficulty: 'Easy', status: 'completed', stars: '★☆☆☆'},
     {id: 2, name: 'School', icon: '🏫', difficulty: 'Medium', status: 'available', stars: '★★☆☆'},
-    {id: 3, name: 'Park', icon: '🌳', difficulty: 'Hard', status: 'locked', stars: '☆☆☆☆'},
-    {id: 4, name: 'City', icon: '🌇', difficulty: 'Expert', status: 'locked', stars: '☆☆☆☆'},
+    {id: 3, name: 'Park', icon: '🌳', difficulty: 'Hard', status: 'locked', stars: '★★★☆'},
+    {id: 4, name: 'City', icon: '🌇', difficulty: 'Expert', status: 'locked', stars: '★★★★'},
   ])
   const getLevelStyles = (status: string) => {
     switch (status) {
