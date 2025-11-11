@@ -1,6 +1,6 @@
 import Title from "../Component/HomePageC/Title"
 import Laila from "../Component/HomePageC/Laila"
-import Lessons from "../Component/Lessons/Lessons"
+import Lessons from "../Component/Lessons/Lesson"
 
 const Learn = () => {
   return (
