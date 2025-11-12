@@ -334,11 +334,120 @@ export interface Lesson {
   image: string;
 }
 
+
 export interface QuizQuestion {
+  id: number;
   question: string;
   options: {
-    emoji: string;
+    id: number;
     text: string;
-    correct: boolean;
+    correct?: boolean;
   }[];
 }
+
+
+
+type QuizDataMap = {
+  [key: number]: {
+    id: number;
+    title: string;
+    questions: {
+      id: number;
+      question: string;
+      options: {
+        id: number;
+        text: string;
+        correct?: boolean;
+      }[];
+    }[];
+  };
+};
+
+export const quizData : QuizDataMap = {
+  1: {
+    id: 1,
+    title: 'The Magic of Recycling Quiz',
+    questions: [
+      {
+        id: 1,
+        question: 'What is recycling?',
+        options: [
+          { id: 1, text: 'Throwing everything in the trash' },
+          { id: 2, text: 'Turning old things into new things', correct: true },
+          { id: 3, text: 'Buying new things all the time' },
+          { id: 4, text: 'Keeping everything forever' }
+        ],
+      },
+      {
+        id: 2,
+        question: 'How many trees are saved by recycling one ton of paper?',
+        options: [
+          { id: 1, text: '5 trees' },
+          { id: 2, text: '10 trees' },
+          { id: 3, text: '17 trees', correct: true },
+          { id: 4, text: '25 trees' }
+        ],
+      },
+      {
+        id: 3,
+        question: 'What happens to trash when we don\'t recycle?',
+        options: [
+          { id: 1, text: 'It disappears by magic' },
+          { id: 2, text: 'It can harm animals and oceans', correct: true },
+          { id: 3, text: 'It turns into candy' },
+          { id: 4, text: 'It becomes invisible' }
+        ],
+      },
+      {
+        id: 4,
+        question: 'Why does recycling save energy?',
+        options: [
+          { id: 1, text: 'It makes things lighter' },
+          { id: 2, text: 'It uses less electricity to make new products', correct: true },
+          { id: 3, text: 'It stops the sun from shining' },
+          { id: 4, text: 'It makes batteries last longer' }
+        ],
+      },
+      {
+        id: 5,
+        question: 'What can 27 plastic bottles become?',
+        options: [
+          { id: 1, text: 'A new car' },
+          { id: 2, text: 'A warm fleece jacket', correct: true },
+          { id: 3, text: 'A bicycle' },
+          { id: 4, text: 'A school book' }
+        ],
+      },
+      {
+        id: 6,
+        question: 'What is the first step in recycling an item?',
+        options: [
+          { id: 1, text: 'Throw it on the ground' },
+          { id: 2, text: 'Put it in the correct bin', correct: true },
+          { id: 3, text: 'Bury it in the garden' },
+          { id: 4, text: 'Hide it under your bed' }
+        ],
+      },
+      {
+        id: 7,
+        question: 'What can old newspapers become?',
+        options: [
+          { id: 1, text: 'New school books', correct: true },
+          { id: 2, text: 'Plastic toys' },
+          { id: 3, text: 'Metal cans' },
+          { id: 4, text: 'Glass bottles' }
+        ],
+      },
+      {
+        id: 8,
+        question: 'How does recycling help our planet?',
+        options: [
+          { id: 1, text: 'Uses more land for landfills' },
+          { id: 2, text: 'Makes the air dirtier' },
+          { id: 3, text: 'Uses less land for landfills', correct: true },
+          { id: 4, text: 'Creates more trash' }
+        ],
+      }
+    ],
+  }
+};
