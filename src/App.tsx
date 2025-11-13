@@ -4,6 +4,7 @@ import Game from "./Pages/Game";
 import Learn  from "./Pages/Learn";
 import Lessons from "./Pages/Lessons";
 import Quiz from "./Pages/Quiz";
+import Achievements from "./Pages/Achievements";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 
@@ -14,10 +15,7 @@ function App() {
     
       <div>
         
-        <Quiz 
-          lessonId={1}
-          
-        />
+        <Achievements/>
       </div>
      
   )

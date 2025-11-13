@@ -178,7 +178,7 @@ export const lessonsData: LessonsData[] = [
             <p>What happens: Turns into compost that helps plants grow!</p>
           </div>
         ),
-        image: '🍎',
+        image: '../../public/Lessons/l2p1.png',
       },
       {
         id: 2,
@@ -190,7 +190,7 @@ export const lessonsData: LessonsData[] = [
             <p>Important rule: Must be clean and dry!</p>
           </div>
         ),
-        image: '♻️',
+        image: '../../public/Lessons/l2p2.png',
       },
       {
         id: 3,
@@ -202,7 +202,7 @@ export const lessonsData: LessonsData[] = [
             <p>Why here: Because they might be dangerous or can't be transformed.</p>
           </div>
         ),
-        image: '🗑️',
+        image: '../../public/Lessons/l12p3.png',
       },
       {
         id: 4,
@@ -214,7 +214,7 @@ export const lessonsData: LessonsData[] = [
             <p>Broken/dangerous items → Gray bin 🗑️.</p>
           </div>
         ),
-        image: '🎯',
+        image: '../../public/Lessons/l2p4.png',
       }
     ]
   },
@@ -232,7 +232,7 @@ export const lessonsData: LessonsData[] = [
             <p>Egg shells → Green bin 🍎 (rich in minerals).</p>
           </div>
         ),
-        image: '🥕',
+        image: '../../public/Lessons/l3p1.png',
       },
       {
         id: 2,
@@ -244,7 +244,7 @@ export const lessonsData: LessonsData[] = [
             <p>Grocery bags → Blue bin ♻️ (if clean).</p>
           </div>
         ),
-        image: '🥫',
+        image: '../../public/Lessons/l3p2.png',
       },
       {
         id: 3,
@@ -256,7 +256,7 @@ export const lessonsData: LessonsData[] = [
             <p>Paper tissues → Gray bin 🗑️ (full of germs).</p>
           </div>
         ),
-        image: '⚠️',
+        image: '../../public/Lessons/l3p4.png',
       },
       {
         id: 4,
@@ -268,7 +268,7 @@ export const lessonsData: LessonsData[] = [
             <p>Can you sort them correctly?</p>
           </div>
         ),
-        image: '🎮',
+        image: '../../public/Lessons/l3p4.png',
       }
     ]
   },
@@ -286,7 +286,7 @@ export const lessonsData: LessonsData[] = [
             <p>Notice color and material of item.</p>
           </div>
         ),
-        image: '🔎',
+        image: '../../public/Lessons/l4p1.png',
       },
       {
         id: 2,
@@ -298,7 +298,7 @@ export const lessonsData: LessonsData[] = [
             <p>"Is this broken or dangerous?" → If yes: Gray bin 🗑️.</p>
           </div>
         ),
-        image: '🤔',
+        image: '../../public/Lessons/l4p2.png',
       },
       {
         id: 3,
@@ -310,7 +310,7 @@ export const lessonsData: LessonsData[] = [
             <p>Don't forget: Some things can be reused!</p>
           </div>
         ),
-        image: '🎯',
+        image: '../../public/Lessons/l4p3.png',
       },
       {
         id: 4,
@@ -321,7 +321,7 @@ export const lessonsData: LessonsData[] = [
             <p>Show me your detective skills and become a Recycling Expert!</p>
           </div>
         ),
-        image: '🏆',
+        image: '../../public/Lessons/l4p4.png',
       }
     ]
   }
