@@ -1,5 +1,7 @@
 import { quizData, type QuizQuestion } from "../../DataBase/DB";
 import { useState , useEffect } from "react";
+import WinQ from "./WinQ";
+import  LoseQ  from "./LoseQ";
 
 type Props = {
     time : number ;
@@ -11,6 +13,8 @@ const QuizComp = ({ lessonId , time }: Props) => {
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: number }>({});
     const [timer , setTimer ] = useState(time);
     const question = quizData[lessonId].questions ;
+    const [showWinScreen, setShowWinScreen] = useState(false);
+    const [showLoseScreen, setShowLoseScreen] = useState(false);
 
     useEffect(() =>{
         if (timer <= 0) {
@@ -69,6 +73,22 @@ const QuizComp = ({ lessonId , time }: Props) => {
 };
 
 
+    const correctCount = calculateScore();
+
+    const handleRestart = () => {
+        setSelectedAnswers({});
+        setTimer(time);
+    }
+    const handleSubmit = () => {
+        const score = calculateScore();
+        if (score >= 5 && timer >= 0) {
+            setShowWinScreen(true);
+        } else {
+            setShowLoseScreen(true);
+        }
+    }
+
+
 
 
 
@@ -92,7 +112,7 @@ const QuizComp = ({ lessonId , time }: Props) => {
                 ></div>
             </div>
             <div className="text-sm text-gray-500 mt-1">
-                Time Remaining and the scour is {calculateScore()}
+                Time Remaining and the scour is {correctCount}
             </div>
         </div>
 
@@ -131,9 +151,13 @@ const QuizComp = ({ lessonId , time }: Props) => {
         </div>
 
         <div className="text-center mt-8 pt-6 border-t border-green-200">
-            <button className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
+            <button onClick={() => handleSubmit()} className="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
                 Submit Answers 🚀
             </button>
+        </div>
+        <div>
+            {showWinScreen && <WinQ onRestart={handleRestart} correctCount={correctCount} />}
+            {showLoseScreen && <LoseQ onRestart={handleRestart} correctCount={correctCount} />}
         </div>
     </div>
   )

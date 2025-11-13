@@ -177,12 +177,12 @@ useEffect(() => {
     };
 
     useEffect(() => {
-        startGame(true); // Initial start - game starts playing immediately
+        startGame(true); 
     }, []);
 
     useEffect(() => {
       if (typeof restartToken === 'number') {
-        startGame(false); // Restart - game starts paused
+        startGame(false); 
       }
     }, [restartToken]);
 
@@ -230,7 +230,7 @@ useEffect(() => {
     const handleRestart = () => {
         setShowWinScreen(false);
         setShowLoseScreen(false);
-        startGame(false); // Restart from win/lose screen - game starts paused
+        startGame(false); 
     };
 
   return (
