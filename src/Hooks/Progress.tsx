@@ -10,8 +10,8 @@ export interface Progress {
 export const useProgress = () => {
 
     const [progress, setProgress] = useState<Progress>({
-        lessonsCompleted: [true , true , true , false] ,
-        gamesFinished: [true , true , false , true]
+        lessonsCompleted: [true , true , false , false] ,
+        gamesFinished: [true , false , false , false]
         
     })
 

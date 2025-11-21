@@ -1,4 +1,7 @@
 import { useNavigate } from "react-router-dom";
+import  useProgress  from "../../Hooks/Progress";
+
+
 
 type Lesson = {
   id: number;
@@ -9,12 +12,8 @@ type Lesson = {
   status: 'completed' | 'available' | 'locked';
 }
 
-const lessons : Lesson[] = [
-    {id: 1, icon: '♻️', name: 'The Magic of Recycling ', status: 'completed' , difficulty: 'Easy' , stars: "★☆☆☆"},
-    {id: 2, icon: '🗑️♻️🍎', name: 'The Three Super Bins ', status: 'available' , difficulty: 'Medium' , stars: "★★☆☆" },
-    {id: 3, icon: '🍳', name: 'Kitchen Recycling Adventure ', status: 'locked' , difficulty: 'Hard' , stars: "★★★☆"},
-    {id: 4, icon: '🔍', name: 'Become a Recycling Detective ', status: 'locked' , difficulty: 'Expert' , stars: "★★★★"},
-    ]
+
+  
 
 const getLevelStyles = (status: string) => {
     switch (status) {
@@ -73,17 +72,35 @@ const getLevelStyles = (status: string) => {
 
 
 const Lessons = () => {
-    const navigate = useNavigate();
+      const navigate = useNavigate();
+        const { progress } = useProgress();
+    const firstIncomplete = progress.lessonsCompleted.indexOf(false);
+    const StatusS = (lessonId: number) => {
+      if(progress.lessonsCompleted[lessonId] === true) {
+        return 'completed';
+      } else if (lessonId === firstIncomplete) {
+        return 'available';
+      } else {
+        return 'locked';
+      }
+    }
+
+
+  const lessons : Lesson[] = [
+      {id: 1, icon: '♻️', name: 'The Magic of Recycling ', status: `${StatusS(0)}` , difficulty: 'Easy' , stars: "★☆☆☆"},
+      {id: 2, icon: '🗑️♻️🍎', name: 'The Three Super Bins ', status: `${StatusS(1)}` , difficulty: 'Medium' , stars: "★★☆☆" },
+      {id: 3, icon: '🍳', name: 'Kitchen Recycling Adventure ', status: `${StatusS(2)}` , difficulty: 'Hard' , stars: "★★★☆"},
+      {id: 4, icon: '🔍', name: 'Become a Recycling Detective ', status: `${StatusS(3)}` , difficulty: 'Expert' , stars: "★★★★"},
+      ]
     const handleLessonClick = (lesson: Lesson) => {
       if (lesson.status === 'locked') return;
       navigate(`/lessons`);
-      console.log('Starting lesson:', lesson.id);
+      
     };
 
     const handleQuizClick = (lesson: Lesson) => {
       if (lesson.status === 'locked') return;
       navigate(`/quiz`);
-      console.log('Starting quiz:', lesson.id);
     };
 
     return (

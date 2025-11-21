@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import useProgress from "../../Hooks/Progress";
 
 type Level = {
   id: number;
@@ -11,13 +12,25 @@ type Level = {
 }
 
 const Levels = () => {
-  const navigate = useNavigate();
-  const [levels] = useState<Level[]>([
-    {id: 1, name: 'Kitchen', icon: '🍴', difficulty: 'Easy', status: 'completed', stars: '★☆☆☆'},
-    {id: 2, name: 'School', icon: '🏫', difficulty: 'Medium', status: 'available', stars: '★★☆☆'},
-    {id: 3, name: 'Park', icon: '🌳', difficulty: 'Hard', status: 'locked', stars: '★★★☆'},
-    {id: 4, name: 'City', icon: '🌇', difficulty: 'Expert', status: 'locked', stars: '★★★★'},
-  ])
+      const { progress } = useProgress();
+      const firstIncomplete = progress.gamesFinished.indexOf(false);
+      const StatusS = (lessonId: number) => {
+        if(progress.gamesFinished[lessonId] === true) {
+          return 'completed';
+        } else if (lessonId === firstIncomplete) {
+          return 'available';
+        } else {
+          return 'locked';
+        }
+      }
+    const navigate = useNavigate();
+
+    const [levels] = useState<Level[]>([
+      {id: 1, name: 'Kitchen', icon: '🍴', difficulty: 'Easy', status: `${StatusS(0)}`, stars: '★☆☆☆'},
+      {id: 2, name: 'School', icon: '🏫', difficulty: 'Medium', status: `${StatusS(1)}`, stars: '★★☆☆'},
+      {id: 3, name: 'Park', icon: '🌳', difficulty: 'Hard', status: `${StatusS(2)}`, stars: '★★★☆'},
+      {id: 4, name: 'City', icon: '🌇', difficulty: 'Expert', status: `${StatusS(3)}`, stars: '★★★★'},
+    ])
   const getLevelStyles = (status: string) => {
     switch (status) {
       case 'completed':
