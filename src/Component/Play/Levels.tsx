@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 type Level = {
   id: number;
@@ -10,7 +11,8 @@ type Level = {
 }
 
 const Levels = () => {
-  const [levels, setLevels] = useState<Level[]>([
+  const navigate = useNavigate();
+  const [levels] = useState<Level[]>([
     {id: 1, name: 'Kitchen', icon: '🍴', difficulty: 'Easy', status: 'completed', stars: '★☆☆☆'},
     {id: 2, name: 'School', icon: '🏫', difficulty: 'Medium', status: 'available', stars: '★★☆☆'},
     {id: 3, name: 'Park', icon: '🌳', difficulty: 'Hard', status: 'locked', stars: '★★★☆'},
@@ -53,6 +55,7 @@ const Levels = () => {
 
   const handleLevelClick = (level: Level) => {
     if (level.status === 'locked') return;
+    navigate(`/Game`);
     console.log('Starting level:', level.id);
   };
 
@@ -92,7 +95,7 @@ const Levels = () => {
               className={`${getButtonStyles(level.status)} font-bold py-3 px-6 rounded-full transition-all duration-200 shadow-md mt-4`}
               disabled={level.status === 'locked'}
             >
-              {getButtonText(level.status)}
+                {getButtonText(level.status)}
             </button>
 
             

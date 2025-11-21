@@ -1,5 +1,7 @@
 import React from 'react';
 import Laila from '../HomePageC/Laila';
+import { Link } from 'react-router-dom';
+
 
 interface WinScreenProps {
   score: number;
@@ -32,12 +34,14 @@ const WinScreen: React.FC<WinScreenProps> = ({ score, onRestart }) => {
 
 
         <div className="flex flex-row gap-4">  
-          <button 
-            onClick={onRestart}
-            className="w-full bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-all"
+          <Link to="/"
+           className="w-full bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-all"
           >
-            🏠 Home
-          </button>
+            <button >
+              🏠 Home
+            </button>
+          </Link>
+          
 
         <button 
           onClick={onRestart}

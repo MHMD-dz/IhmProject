@@ -1,5 +1,6 @@
 import Laila from '../HomePageC/Laila';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface LoseScreenProps {
   score: number;
@@ -20,7 +21,7 @@ const LoseScreen: React.FC<LoseScreenProps> = ({ score, onRestart }) => {
           title="Oops! Let's Try Again!"
           text="Oh no! The planet needs your help! 
                   Don't give up - let's clean up together! 🌱✨"
-          lailaImage='/LailaSad.png'
+          lailaImage='/Laila/LailaSad.png'
         />
 
         
@@ -31,12 +32,14 @@ const LoseScreen: React.FC<LoseScreenProps> = ({ score, onRestart }) => {
         </div>
 
         <div className="flex flex-row gap-4">  
-          <button 
-            onClick={onRestart}
-            className="w-full bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-all"
+          <Link to="/"
+          className="w-full bg-gray-400 hover:bg-gray-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-all"
           >
-            🏠 Home
-          </button>
+            <button >
+              🏠 Home
+            </button>
+          </Link>
+          
           <button 
             onClick={onRestart}
             className="w-full bg-red-500 hover:bg-red-600 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-all"

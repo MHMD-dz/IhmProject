@@ -3,10 +3,8 @@ interface BadgeCardProps {
     title: string;
     description: string;
     earned: boolean;
-    progressText?: string;
-    borderColor?: string;
-    bgFrom?: string;
-    bgTo?: string;
+    borderColor: string;
+
 }
 
 const BadgeCard = ({
@@ -14,15 +12,12 @@ const BadgeCard = ({
     title,
     description,
     earned,
-    progressText,
     borderColor = "border-gray-300",
-    bgFrom = "from-gray-100",
-    bgTo = "to-gray-100"
+
 }: BadgeCardProps) => {
     return (
         <div
-            className={`rounded-xl p-6 shadow-md text-center border-2 
-            bg-linear-to-br ${bgFrom} ${bgTo} 
+            className={`rounded-xl p-6 shadow-md text-center border-2 bg-gray-100
             ${earned ? "" : "opacity-60"} 
             ${borderColor}`}
         >
@@ -41,10 +36,6 @@ const BadgeCard = ({
                 <span className="bg-gray-400 text-white px-3 py-1 rounded-full text-sm">
                     Locked
                 </span>
-            )}
-
-            {progressText && (
-                <p className="text-xs text-gray-500 mt-2">{progressText}</p>
             )}
         </div>
     );

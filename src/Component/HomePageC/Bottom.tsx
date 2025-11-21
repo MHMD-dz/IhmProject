@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap } from 'react-icons/f
 
 const Bottom = () => {
   return (
-    <div className="w-full bg-gradient-to-r from-green-500 mt-7 to-blue-500 text-white p-8 sticky   text-center  rounded-3xl shadow-lg">
+    <div className="w-full bg-linear-to-r from-green-500 mt-7 to-blue-500 text-white p-8 sticky   text-center  rounded-3xl shadow-lg">
       
       <div className="max-w-2xl mx-auto">
         

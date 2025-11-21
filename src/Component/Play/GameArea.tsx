@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import {  getLevelItems, bins } from '../../DataBase/DB';
-import type { WasteItem , Bin} from '../../DataBase/DB';
+import type { WasteItem } from '../../DataBase/DB';
 import WinScreen from './WinScreen';
 import LoseScreen from './LoseScreen';
 

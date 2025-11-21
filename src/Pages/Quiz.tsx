@@ -16,7 +16,7 @@ const Quiz = ({lessonId}: QuizProps) => {
       <Laila
         title={` Welcome to Quiz ${lessonId} `}
         text="Hello there, future eco-hero! 🌟 I'm Laila, and I'm so excited to be your recycling guide. Get ready for a fun adventure where we'll learn how to protect our amazing planet together. Let's become Earth's superheroes! 🦸‍♀️🌍!"
-        lailaImage="/LailaLrn.png"
+        lailaImage="/Laila/LailaLrn.png"
         />
         <QuizComp
           lessonId={lessonId}

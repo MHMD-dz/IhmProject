@@ -1,4 +1,4 @@
-
+import { useNavigate } from "react-router-dom";
 
 type Lesson = {
   id: number;
@@ -69,10 +69,23 @@ const getLevelStyles = (status: string) => {
       return 'bg-indigo-500 text-white';
   }
 };
-
+  
 
 
 const Lessons = () => {
+    const navigate = useNavigate();
+    const handleLessonClick = (lesson: Lesson) => {
+      if (lesson.status === 'locked') return;
+      navigate(`/lessons`);
+      console.log('Starting lesson:', lesson.id);
+    };
+
+    const handleQuizClick = (lesson: Lesson) => {
+      if (lesson.status === 'locked') return;
+      navigate(`/quiz`);
+      console.log('Starting quiz:', lesson.id);
+    };
+
     return (
     <div className='w-[73%] mx-auto rounded-2xl my-6 bg-white border-4 border-blue-200 p-9 text-center '>
 
@@ -94,11 +107,15 @@ const Lessons = () => {
             </div>
 
             <div>
-              <button className={`${getLessonButtonStyles(lesson.status)} shadow-md w-full py-3 rounded-full mb-2 text-lg font-semibold hover:scale-105 transition-all`}>
+              <button
+              onClick={() => handleLessonClick(lesson)}
+              className={`${getLessonButtonStyles(lesson.status)} shadow-md w-full py-3 rounded-full mb-2 text-lg font-semibold hover:scale-105 transition-all`}>
                 {getLessonButtonText(lesson.status)}
               </button>
               
-              <button className={`${getQuizButtonStyles(lesson.status)} w-full py-3 rounded-full text-lg font-semibold hover:scale-105 transition-all`}>
+              <button 
+              onClick={() => handleQuizClick(lesson)}
+              className={`${getQuizButtonStyles(lesson.status)} w-full py-3 rounded-full text-lg font-semibold hover:scale-105 transition-all`}>
                 {getQuizButtonText(lesson.status)}
               </button>
 

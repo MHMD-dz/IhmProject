@@ -2,27 +2,17 @@ import { useState , useEffect } from "react";
 
 
 export interface Progress {
-    lessonsCompleted: number;
-    gamesFinished: number;
-    badgesEarned: {
-        lesson: number;
-        game: number;
-        lessons: boolean;
-        games: boolean;   
-    };
+    lessonsCompleted: boolean[] ;
+    gamesFinished: boolean[];
+    
 }
 
 export const useProgress = () => {
 
     const [progress, setProgress] = useState<Progress>({
-        lessonsCompleted: 0,
-        gamesFinished: 0,
-        badgesEarned: {
-            lesson: 0,
-            game: 0,
-            lessons: false,
-            games: false,
-        }
+        lessonsCompleted: [true , true , true , false] ,
+        gamesFinished: [true , true , false , true]
+        
     })
 
     useEffect(() => {
@@ -37,16 +27,20 @@ export const useProgress = () => {
     }, [progress]);
 
 
-    const compliteLesson = () => {
-        setProgress( prev => ({ ...prev , lessonsCompleted: prev.lessonsCompleted + 1  , 
-            badgesEarned: {...prev.badgesEarned , lesson : prev.badgesEarned.lesson + 1 }
-        })  )
+    const compliteLesson = (lessonId: number) => {
+        setProgress( prev => {
+            const newProgress = [...prev.lessonsCompleted];
+            newProgress[lessonId] = true;
+            return { ...prev , lessonsCompleted: newProgress };
+        } )
     }
 
-    const finishGame = () => {
-        setProgress( prev => ({ ...prev , gamesFinished: prev.gamesFinished + 1  , 
-            badgesEarned: {...prev.badgesEarned , game : prev.badgesEarned.game + 1 }
-        })  )
+    const finishGame = (levelId: number) => {
+        setProgress( prev => {
+            const newProgress = [ ...prev.gamesFinished];
+            newProgress[levelId] = true;
+            return { ...prev , gamesFinished: newProgress };
+        })
     }
 
 

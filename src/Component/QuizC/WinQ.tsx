@@ -1,4 +1,5 @@
 import Laila from "../HomePageC/Laila"
+import { Link } from "react-router-dom";
 
 type Props = {
     correctCount : number ;
@@ -26,12 +27,13 @@ const WinQ = ( { correctCount , onRestart} : Props ) => {
           </div>
         </div>
         <div>
+          <Link to="/" >
             <button 
             onClick={onRestart}
             className="w-full text-2xl text-gray-800 bg-gray-300 hover:bg-gray-400  font-bold py-4 px-6 rounded-2xl  transition-all"
           >
             Home 🏠
-          </button>
+          </button></Link>
         </div>
 
 
