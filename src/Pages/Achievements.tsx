@@ -86,7 +86,7 @@ const Achievements = () => {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <HeroBadg
-                            image="/public/Badges/hero.png"
+                            image="/Badges/hero.png"
                             title="Adventure Master"
                             description="Complete all 4 game levels"
                             progressBar={NumberOfGameDone}
