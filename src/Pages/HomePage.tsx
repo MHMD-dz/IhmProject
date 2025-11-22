@@ -6,7 +6,7 @@ function HomePage() {
   
   return (
     
-      <div className="min-h-screen bg-linear-to-br from-green-400 to-blue-300  p-4 text-cente ">
+      <div className="min-h-screen bg-linear-to-br from-green-400 to-blue-300  p-3 text-cente ">
         <Title title="🌱 EcoKids 🌱" />
         <Laila 
             title="Hello, I am Laila! 👋" 

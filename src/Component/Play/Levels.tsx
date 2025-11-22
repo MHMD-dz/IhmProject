@@ -1,36 +1,36 @@
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import useProgress from "../../Hooks/Progress";
+import { useContext } from "react";
+import { ProgressContext } from "../../Hooks/PrgContext";
 
 type Level = {
   id: number;
   name: string;
   icon: string;
   difficulty: string;
-  status: 'completed' | 'available' | 'locked';
+  status: string;
   stars: string;
 }
 
 const Levels = () => {
-      const { progress } = useProgress();
+      const { progress  } = useContext(ProgressContext);
       const firstIncomplete = progress.gamesFinished.indexOf(false);
-      const StatusS = (lessonId: number) => {
-        if(progress.gamesFinished[lessonId] === true) {
-          return 'completed';
-        } else if (lessonId === firstIncomplete) {
-          return 'available';
+      const StatusS = (levelsId: number) => {
+        if(progress.gamesFinished[levelsId] === true) {
+          return "completed";
+        } else if (levelsId === firstIncomplete) {
+          return "available";
         } else {
-          return 'locked';
+          return "locked";
         }
       }
     const navigate = useNavigate();
 
-    const [levels] = useState<Level[]>([
-      {id: 1, name: 'Kitchen', icon: '🍴', difficulty: 'Easy', status: `${StatusS(0)}`, stars: '★☆☆☆'},
-      {id: 2, name: 'School', icon: '🏫', difficulty: 'Medium', status: `${StatusS(1)}`, stars: '★★☆☆'},
-      {id: 3, name: 'Park', icon: '🌳', difficulty: 'Hard', status: `${StatusS(2)}`, stars: '★★★☆'},
-      {id: 4, name: 'City', icon: '🌇', difficulty: 'Expert', status: `${StatusS(3)}`, stars: '★★★★'},
-    ])
+    const levels = [
+      {id: 1, name: 'Kitchen', icon: '🍴', difficulty: 'Easy', status: StatusS(0) , stars: '★☆☆☆'},
+      {id: 2, name: 'School', icon: '🏫', difficulty: 'Medium', status: StatusS(1), stars: '★★☆☆'},
+      {id: 3, name: 'Park', icon: '🌳', difficulty: 'Hard', status: StatusS(2), stars: '★★★☆'},
+      {id: 4, name: 'City', icon: '🌇', difficulty: 'Expert', status: StatusS(3), stars: '★★★★'},
+    ]
   const getLevelStyles = (status: string) => {
     switch (status) {
       case 'completed':
@@ -68,8 +68,7 @@ const Levels = () => {
 
   const handleLevelClick = (level: Level) => {
     if (level.status === 'locked') return;
-    navigate(`/Game`);
-    console.log('Starting level:', level.id);
+    navigate(`/game/${level.id}`);
   };
 
   return (

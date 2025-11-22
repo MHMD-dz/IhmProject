@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import  useProgress  from "../../Hooks/Progress";
+import { useContext } from "react";
+import { ProgressContext } from "../../Hooks/PrgContext";
 
 
 
@@ -73,8 +74,8 @@ const getLevelStyles = (status: string) => {
 
 const Lessons = () => {
       const navigate = useNavigate();
-        const { progress } = useProgress();
-    const firstIncomplete = progress.lessonsCompleted.indexOf(false);
+      const { progress } = useContext(ProgressContext);
+      const firstIncomplete = progress.lessonsCompleted.indexOf(false);
     const StatusS = (lessonId: number) => {
       if(progress.lessonsCompleted[lessonId] === true) {
         return 'completed';
@@ -94,13 +95,13 @@ const Lessons = () => {
       ]
     const handleLessonClick = (lesson: Lesson) => {
       if (lesson.status === 'locked') return;
-      navigate(`/lessons`);
+      navigate(`/lessons/${lesson.id}`);
       
     };
 
     const handleQuizClick = (lesson: Lesson) => {
       if (lesson.status === 'locked') return;
-      navigate(`/quiz`);
+      navigate(`/quiz/${lesson.id}`);
     };
 
     return (

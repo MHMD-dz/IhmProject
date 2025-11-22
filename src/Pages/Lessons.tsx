@@ -1,11 +1,13 @@
 import Title from "../Component/HomePageC/Title"
 import LessonPage from "../Component/Lessons/ChooseL";
 import Laila from "../Component/HomePageC/Laila";
+import { useParams } from 'react-router-dom';
 
-interface Props  {
-    lessonId : number ;
-}
-const Lessons = ( {lessonId} : Props ) => {
+
+
+
+const Lessons = () => {
+  const { lessonId } = useParams();
   return (
     <div className="min-h-screen bg-green-100  p-3 text-cente " >
       <Title
@@ -19,7 +21,7 @@ const Lessons = ( {lessonId} : Props ) => {
       />
       
       <LessonPage
-        LessonId={lessonId}
+        LessonId={Number(lessonId)}
       />
     </div>
   )

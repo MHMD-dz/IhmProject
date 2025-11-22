@@ -4,7 +4,7 @@ import Laila from "../Component/HomePageC/Laila"
 
 const Play = () => {
   return (
-    <div className="min-h-screen bg-linear-to-br from-blue-400 to-blue-200  p-6 text-cente ">
+    <div className="min-h-screen bg-linear-to-br from-blue-400 to-blue-200  p-3 text-cente ">
       <Title title="🎮 Let's Play 🎮" />
       <Laila 
           title="Let's Begin, Eco-Hero! 🦸"

@@ -9,10 +9,16 @@ export interface Progress {
 
 export const useProgress = () => {
 
-    const [progress, setProgress] = useState<Progress>({
-        lessonsCompleted: [true , true , false , false] ,
-        gamesFinished: [true , false , false , false]
-        
+    const [progress, setProgress] = useState<Progress>(() => {
+        const sevedProgress = localStorage.getItem('recyclingAppProgress');
+        if (sevedProgress) {
+            return JSON.parse(sevedProgress);
+        } else {
+            return {
+                lessonsCompleted: [true, false, false, false],
+                gamesFinished: [true, false, false, false]
+            }
+        }
     })
 
     useEffect(() => {
@@ -28,9 +34,12 @@ export const useProgress = () => {
 
 
     const compliteLesson = (lessonId: number) => {
+        console.log('compliteLesson called with lessonId:', lessonId);
         setProgress( prev => {
+            console.log('Previous progress:', prev);
             const newProgress = [...prev.lessonsCompleted];
             newProgress[lessonId] = true;
+            console.log('New lessonsCompleted array:', newProgress);
             return { ...prev , lessonsCompleted: newProgress };
         } )
     }
@@ -42,11 +51,19 @@ export const useProgress = () => {
             return { ...prev , gamesFinished: newProgress };
         })
     }
+    const resetProgress = () => {
+        const initialProgress = {
+        lessonsCompleted: [false, false, false, false],
+        gamesFinished: [false, false, false, false],
+        };
+        setProgress(initialProgress);
+        localStorage.removeItem('recyclingAppProgress'); 
+  };
 
 
 
   return {
-     progress , compliteLesson , finishGame 
+     progress , compliteLesson , finishGame , resetProgress
     }
   
 }

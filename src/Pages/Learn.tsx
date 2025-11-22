@@ -4,7 +4,7 @@ import Lessons from "../Component/Lessons/Lesson"
 
 const Learn = () => {
   return (
-    <div className='min-h-screen bg-linear-to-br from-green-100 to-blue-100  p-6 text-cente ' >
+    <div className='min-h-screen bg-linear-to-br from-green-100 to-blue-100  p-3 text-cente ' >
       <Title
         title="📚 Let's Learn 📚"
       />

@@ -2,6 +2,7 @@ import GameArea from '../Component/Play/GameArea'
 import GameHeader from '../Component/Play/GameHeader'
 import GameFooter from '../Component/Play/GameFooter'
 import { useState } from 'react'
+import { useParams } from 'react-router-dom';
 
 const Game = () => {
   const [gameStats, setGameStats] = useState({
@@ -17,8 +18,10 @@ const Game = () => {
   const updateGameStats = (newStats: Partial<typeof gameStats>) => {
     setGameStats(prev => ({ ...prev, ...newStats }));
   };
+  const { levelId } = useParams<{levelId: string}>();
   return (
-    <div className='min-h-screen bg-linear-to-br from-blue-300 to-blue-200  p-6 text-cente ' >
+    <div className='min-h-screen bg-linear-to-br from-blue-300 to-blue-200  p-3 text-cente ' >
+
         <GameHeader
           Time={gameStats.timeLeft}
           Score={gameStats.score}
@@ -27,7 +30,7 @@ const Game = () => {
           />
         <GameArea 
           onStatsUpdate={updateGameStats}
-          levelId={2}
+          levelId={Number(levelId)}
           restartToken={restartToken}
           pauseToken={pauseToken}
         />

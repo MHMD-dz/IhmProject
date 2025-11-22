@@ -2,6 +2,8 @@ import { quizData, type QuizQuestion } from "../../DataBase/DB";
 import { useState , useEffect } from "react";
 import WinQ from "./WinQ";
 import  LoseQ  from "./LoseQ";
+import { useContext } from "react";
+import { ProgressContext } from "../../Hooks/PrgContext";
 
 type Props = {
     time : number ;
@@ -10,6 +12,7 @@ type Props = {
 
 
 const QuizComp = ({ lessonId , time }: Props) => {
+    const { compliteLesson } = useContext(ProgressContext);
     const [selectedAnswers, setSelectedAnswers] = useState<{ [key: number]: number }>({});
     const [timer , setTimer ] = useState(time);
     const question = quizData[lessonId].questions ;
@@ -81,7 +84,11 @@ const QuizComp = ({ lessonId , time }: Props) => {
     }
     const handleSubmit = () => {
         const score = calculateScore();
+        console.log('Quiz Submit - LessonId:', lessonId, 'Score:', score, 'Timer:', timer);
+        console.log('Calling compliteLesson with index:', lessonId-1);
         if (score >= 5 && timer >= 0) {
+            compliteLesson(lessonId-1);
+            console.log('Quiz completed! Should update progress.');
             setShowWinScreen(true);
         } else {
             setShowLoseScreen(true);
@@ -95,8 +102,9 @@ const QuizComp = ({ lessonId , time }: Props) => {
   return (
     <div className='bg-linear-to-br from-blue-50 to-green-50 w-[90vw] max-w-4xl p-6 mt-8 mx-auto rounded-3xl border-2 border-green-300 shadow-xl'>
         <div className="text-center mb-8">
-            <h1 className='text-4xl font-bold text-green-700 mb-2'>
-                🌟 Quiz Time! 🌟
+           
+            <h1  className='text-4xl font-bold text-green-700 mb-2'>
+                🌟 Quiz Time! 🌟 
             </h1>
             <p className="text-lg text-gray-600">Test your recycling knowledge!</p>
         </div>
@@ -137,7 +145,8 @@ const QuizComp = ({ lessonId , time }: Props) => {
                             <div 
                                 key={opt.id}
                                 className={getOptionStyle(question.id, opt.id)}
-                                onClick={() => handleAnswer(question.id , opt.id)}
+                                onClick={() => handleAnswer(question.id , opt.id) }
+                                
                             >
                                 <span className="w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-bold mr-3">
                                     {String.fromCharCode(64 + opt.id)}

@@ -21,7 +21,7 @@ const WinScreen: React.FC<WinScreenProps> = ({ score, onRestart }) => {
           title="Eco Champion! 🏅"
           text="Mission accomplished! You've made the world 
                 cleaner and greener! 🦸‍♀️💫"
-          lailaImage='/LailaHappy.png'
+          lailaImage='/Laila/LailaHappy.png'
         />
         
         

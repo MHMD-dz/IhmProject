@@ -17,7 +17,7 @@ const LoseQ = ( { correctCount , onRestart} : Props ) => {
         <Laila
           title="You're Getting There!"
           text="Learning takes time and you're making great progress!🦸‍♀️"
-          lailaImage='/LailaSad.png'
+          lailaImage='/Laila/LailaSad.png'
         />
         
         <div className="bg-red-100 mt-8 rounded-xl p-4 mb-4">

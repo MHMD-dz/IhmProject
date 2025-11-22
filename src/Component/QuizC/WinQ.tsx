@@ -18,7 +18,7 @@ const WinQ = ( { correctCount , onRestart} : Props ) => {
         <Laila
           title="You Did It!"
           text="You've mastered recycling knowledge! You're an eco-superstar! 🦸‍♀️💫"
-          lailaImage='/LailaHappy.png'
+          lailaImage='/Laila/LailaHappy.png'
         />
         
         <div className="bg-green-100 mt-8 rounded-xl p-4 mb-4">

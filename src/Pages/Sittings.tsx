@@ -1,4 +1,7 @@
+import { useContext } from "react";
+import {ProgressContext} from "../Hooks/PrgContext";
 const SettingsPage = () => {
+    const { resetProgress } = useContext(ProgressContext);
     return (
         <div className="min-h-screen bg-linear-to-br from-green-300 to-blue-300 p-6">
             <div className="max-w-2xl mx-auto">
@@ -15,14 +18,18 @@ const SettingsPage = () => {
                         
                     
                 </div>
-
-                
-
                 
                 <div className="bg-white rounded-xl p-6 shadow-md">
                     <h2 className="text-xl font-bold text-red-600 mb-4">Reset</h2>
-                    <button className="bg-red-500 hover:bg-red-600 text-white py-2 px-6 rounded-lg">
-                        Reset All Progress
+                    <button
+                        onClick={() => {
+                        if (window.confirm("Are you sure you want to reset your progress?")) {
+                            resetProgress();
+                        }
+                        }}
+                        className="bg-red-500 text-white px-4 py-2 rounded"
+                    >
+                        Reset Progress
                     </button>
                 </div>
             </div>

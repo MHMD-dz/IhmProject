@@ -7,27 +7,29 @@ import Lessons from "./Pages/Lessons";
 import Quiz from "./Pages/Quiz";
 import Achievements from "./Pages/Achievements";
 import Sittings from "./Pages/Sittings";
+import ProgressContextProvider from "./Hooks/PrgContext"; 
+
 
 
 
 
 function App() {
-  
   return (
     
       <div>
 
-        <Routes>
-          <Route path="/" element={<HomePage/>}/>
-          <Route path="/play" element={<Play/>}/>
-          <Route path="/game" element={<Game/>}/>
-          <Route path="/learn" element={<Learn/>}/>
-          <Route path="/lessons" element={<Lessons lessonId={1} />}/>
-          <Route path="/quiz" element={<Quiz lessonId={1} />}/>
-          <Route path="/achievements" element={<Achievements/>}/>
-          <Route path="/sittings" element={<Sittings/>}/>
-        </Routes>
-
+        <ProgressContextProvider>
+          <Routes>
+            <Route path="/" element={<HomePage/>}/>
+            <Route path="/play" element={<Play/>}/>
+            <Route path="/game/:levelId" element={<Game/>}/>
+            <Route path="/learn" element={<Learn/>}/>
+            <Route path="/lessons/:lessonId" element={<Lessons/>}/>
+            <Route path="/quiz/:lessonId" element={<Quiz/>}/>
+            <Route path="/achievements" element={<Achievements/>}/>
+            <Route path="/sittings" element={<Sittings/>}/>
+          </Routes>
+        </ProgressContextProvider>
       </div>
      
   )

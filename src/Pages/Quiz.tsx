@@ -1,13 +1,12 @@
 import Title from "../Component/HomePageC/Title";
 import Laila from "../Component/HomePageC/Laila";
 import QuizComp from "../Component/QuizC/QuizComp";
+import { useParams } from "react-router-dom";
 
-interface QuizProps {
-  lessonId: number;
-}
-
-const Quiz = ({lessonId}: QuizProps) => {
+const Quiz = () => {
+  const { lessonId } = useParams();
   return (
+
     <div className="min-h-screen bg-green-100  p-3 text-cente " >
       <Title
         title={`📚 Quiz ${lessonId} 📚`}
@@ -19,7 +18,7 @@ const Quiz = ({lessonId}: QuizProps) => {
         lailaImage="/Laila/LailaLrn.png"
         />
         <QuizComp
-          lessonId={lessonId}
+          lessonId={Number(lessonId)}
           time={200}
         />
     </div>

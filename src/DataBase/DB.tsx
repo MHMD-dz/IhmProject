@@ -449,5 +449,263 @@ export const quizData : QuizDataMap = {
         ],
       }
     ],
-  }
+  },
+  2: {
+    id: 2,
+    title: 'The Three Super Bins Quiz',
+    questions: [
+      {
+        id: 1,
+        question: 'What type of waste goes into the Green Bin?',
+        options: [
+          { id: 1, text: 'Plastic bottles' },
+          { id: 2, text: 'Anything that was once plant or animal', correct: true },
+          { id: 3, text: 'Batteries' },
+          { id: 4, text: 'Cardboard' }
+        ],
+      },
+      {
+        id: 2,
+        question: 'What must you do before putting items in the Blue Bin?',
+        options: [
+          { id: 1, text: 'Clean and dry them', correct: true },
+          { id: 2, text: 'Paint them' },
+          { id: 3, text: 'Leave them dirty' },
+          { id: 4, text: 'Wrap them in plastic' }
+        ],
+      },
+      {
+        id: 3,
+        question: 'Why do batteries go into the Gray Bin?',
+        options: [
+          { id: 1, text: 'Because they are dangerous or cannot be transformed', correct: true },
+          { id: 2, text: 'Because they are edible' },
+          { id: 3, text: 'Because they are recyclable' },
+          { id: 4, text: 'Because they are organic' }
+        ],
+      },
+      {
+        id: 4,
+        question: 'Which bin is for clean plastic, paper, and metal?',
+        options: [
+          { id: 1, text: 'Green Bin' },
+          { id: 2, text: 'Blue Bin', correct: true },
+          { id: 3, text: 'Gray Bin' },
+          { id: 4, text: 'No bin' }
+        ],
+      },
+      {
+        id: 5,
+        question: 'Which bin should food and plant waste go into?',
+        options: [
+          { id: 1, text: 'Blue Bin' },
+          { id: 2, text: 'Gray Bin' },
+          { id: 3, text: 'Green Bin', correct: true },
+          { id: 4, text: 'Trash Can' }
+        ],
+      },
+      {
+        id: 6,
+        question: 'What happens to organic waste in the Green Bin?',
+        options: [
+          { id: 1, text: 'It becomes compost', correct: true },
+          { id: 2, text: 'It becomes plastic' },
+          { id: 3, text: 'It disappears' },
+          { id: 4, text: 'It is burned' }
+        ],
+      },
+      {
+        id: 7,
+        question: 'Which bin is called the “Transformation Heroes”?',
+        options: [
+          { id: 1, text: 'Gray Bin' },
+          { id: 2, text: 'Blue Bin', correct: true },
+          { id: 3, text: 'Green Bin' },
+          { id: 4, text: 'Trash Bin' }
+        ],
+      },
+      {
+        id: 8,
+        question: 'Which items go in the Gray Bin?',
+        options: [
+          { id: 1, text: 'Things that cannot be reused or are dangerous', correct: true },
+          { id: 2, text: 'Plastic bottles' },
+          { id: 3, text: 'Vegetable peels' },
+          { id: 4, text: 'Paper' }
+        ],
+      },
+    ],
+  },
+  3: {
+    id: 3,
+    title: 'Kitchen Recycling Adventure Quiz',
+    questions: [
+      {
+        id: 1,
+        question: 'Where should vegetable peels go?',
+        options: [
+          { id: 1, text: 'Gray Bin' },
+          { id: 2, text: 'Blue Bin' },
+          { id: 3, text: 'Green Bin', correct: true },
+          { id: 4, text: 'Trash Can' }
+        ],
+      },
+      {
+        id: 2,
+        question: 'Where should fruit scraps go?',
+        options: [
+          { id: 1, text: 'Green Bin', correct: true },
+          { id: 2, text: 'Blue Bin' },
+          { id: 3, text: 'Gray Bin' },
+          { id: 4, text: 'Trash Can' }
+        ],
+      },
+      {
+        id: 3,
+        question: 'Where should eggshells go?',
+        options: [
+          { id: 1, text: 'Green Bin', correct: true },
+          { id: 2, text: 'Blue Bin' },
+          { id: 3, text: 'Gray Bin' },
+          { id: 4, text: 'Trash Can' }
+        ],
+      },
+      {
+        id: 4,
+        question: 'Where should food cans go?',
+        options: [
+          { id: 1, text: 'Blue Bin', correct: true },
+          { id: 2, text: 'Green Bin' },
+          { id: 3, text: 'Gray Bin' },
+          { id: 4, text: 'Trash Can' }
+        ],
+      },
+      {
+        id: 5,
+        question: 'Where should sauce bottles go?',
+        options: [
+          { id: 1, text: 'Blue Bin', correct: true },
+          { id: 2, text: 'Gray Bin' },
+          { id: 3, text: 'Green Bin' },
+          { id: 4, text: 'Trash Can' }
+        ],
+      },
+      {
+        id: 6,
+        question: 'Where should batteries go?',
+        options: [
+          { id: 1, text: 'Gray Bin', correct: true },
+          { id: 2, text: 'Blue Bin' },
+          { id: 3, text: 'Green Bin' },
+          { id: 4, text: 'Compost' }
+        ],
+      },
+      {
+        id: 7,
+        question: 'Where should paper tissues go?',
+        options: [
+          { id: 1, text: 'Gray Bin', correct: true },
+          { id: 2, text: 'Blue Bin' },
+          { id: 3, text: 'Green Bin' },
+          { id: 4, text: 'Recycle Center' }
+        ],
+      },
+      {
+        id: 8,
+        question: 'What is the “Hands-on Activity” about?',
+        options: [
+          { id: 1, text: 'Sorting different items into correct bins', correct: true },
+          { id: 2, text: 'Cooking a meal' },
+          { id: 3, text: 'Planting a tree' },
+          { id: 4, text: 'Painting a picture' }
+        ],
+      },
+    ],
+  },
+  4: {
+    id: 4,
+    title: 'Become a Recycling Detective Quiz',
+    questions: [
+      {
+        id: 1,
+        question: 'How can you tell if something belongs in the Green Bin?',
+        options: [
+          { id: 1, text: 'It is made from nature', correct: true },
+          { id: 2, text: 'It is plastic' },
+          { id: 3, text: 'It is metal' },
+          { id: 4, text: 'It is dangerous' }
+        ],
+      },
+      {
+        id: 2,
+        question: 'What should you do when in doubt about sorting?',
+        options: [
+          { id: 1, text: 'Ask an adult', correct: true },
+          { id: 2, text: 'Throw it in any bin' },
+          { id: 3, text: 'Leave it on the floor' },
+          { id: 4, text: 'Burn it' }
+        ],
+      },
+      {
+        id: 3,
+        question: 'Which bin is for things that can be washed and used again?',
+        options: [
+          { id: 1, text: 'Blue Bin', correct: true },
+          { id: 2, text: 'Green Bin' },
+          { id: 3, text: 'Gray Bin' },
+          { id: 4, text: 'No bin' }
+        ],
+      },
+      {
+        id: 4,
+        question: 'Why is cleanliness important in recycling?',
+        options: [
+          { id: 1, text: 'It helps recycled materials be reused safely', correct: true },
+          { id: 2, text: 'It makes bins look prettier' },
+          { id: 3, text: 'It is not important' },
+          { id: 4, text: 'It helps plants grow faster' }
+        ],
+      },
+      {
+        id: 5,
+        question: 'Which bin should broken or dangerous items go into?',
+        options: [
+          { id: 1, text: 'Green Bin' },
+          { id: 2, text: 'Blue Bin' },
+          { id: 3, text: 'Gray Bin', correct: true },
+          { id: 4, text: 'Recycle Center' }
+        ],
+      },
+      {
+        id: 6,
+        question: 'Which skill involves looking for recycling symbols and small instructions?',
+        options: [
+          { id: 1, text: 'Evidence Finding Skills', correct: true },
+          { id: 2, text: 'Question-Asking Skills' },
+          { id: 3, text: 'Decision-Making Skills' },
+          { id: 4, text: 'Final Mission' }
+        ],
+      },
+      {
+        id: 7,
+        question: 'Which skill helps you decide the correct bin when unsure?',
+        options: [
+          { id: 1, text: 'Question-Asking Skills' },
+          { id: 2, text: 'Decision-Making Skills', correct: true },
+          { id: 3, text: 'Evidence Finding Skills' },
+          { id: 4, text: 'Sorting Skills' }
+        ],
+      },
+      {
+        id: 8,
+        question: 'What is the final mission in this lesson?',
+        options: [
+          { id: 1, text: 'Solve 5 recycling mysteries', correct: true },
+          { id: 2, text: 'Cook a meal' },
+          { id: 3, text: 'Plant a tree' },
+          { id: 4, text: 'Paint a picture' }
+        ],
+      },
+    ],
+  },
 };

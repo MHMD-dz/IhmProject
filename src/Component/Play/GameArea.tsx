@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {  getLevelItems, bins } from '../../DataBase/DB';
 import type { WasteItem } from '../../DataBase/DB';
 import WinScreen from './WinScreen';
 import LoseScreen from './LoseScreen';
+import { ProgressContext } from '../../Hooks/PrgContext';
+
 
 interface GameAreaProps {
   onStatsUpdate: (stats: { score?: number; timeLeft?: number; lives?: number ; scoreToWin?: number }) => void;
@@ -30,6 +32,8 @@ const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId, restartTok
         fallingSpeed: 2,
         spawnRate: 1500,
     });
+    const { finishGame } = useContext(ProgressContext);
+
 
 
 
@@ -221,6 +225,7 @@ useEffect(() => {
     const endGame = (won: boolean) => {
         setIsPlaying(false);
         if (won) {
+            finishGame(levelId-1);
             setShowWinScreen(true);
         } else {
             setShowLoseScreen(true);

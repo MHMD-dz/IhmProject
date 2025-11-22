@@ -1,11 +1,12 @@
 import BadgeCard from "../Component/AchievementsC/Badg";
 import HeroBadg from "../Component/AchievementsC/HeroBadg";
 import Laila from "../Component/HomePageC/Laila";
-import useProgress from "../Hooks/Progress";
+import { useContext } from "react";
+import { ProgressContext } from "../Hooks/PrgContext";
 
 
 const Achievements = () => {
-    const { progress } = useProgress();
+    const { progress } = useContext(ProgressContext);
     const { lessonsCompleted , gamesFinished } = progress;
     const allGameDone = gamesFinished.map((game) => game).every(Boolean);
     const allLessonsDone = lessonsCompleted.map((lesson) => lesson).every(Boolean);
