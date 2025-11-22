@@ -86,7 +86,7 @@ const Achievements = () => {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <HeroBadg
-                            image="../../public/Badges/hero.png"
+                            image="/public/Badges/hero.png"
                             title="Adventure Master"
                             description="Complete all 4 game levels"
                             progressBar={NumberOfGameDone}
@@ -99,7 +99,7 @@ const Achievements = () => {
 
         
                         <HeroBadg
-                            image="../../public/Badges/mhmd.png"
+                            image="/public/Badges/mhmd.png"
                             title="Wisdom Keeper"
                             description="Finish all 4 lessons"
                             progressBar={NumberOfLessonsDone}
@@ -110,7 +110,7 @@ const Achievements = () => {
                             noteColor="text-green-600"
                         />
                         <HeroBadg
-                            image="../../public/Badges/laila.png"
+                            image="/public/Badges/laila.png"
                             title="Super Eco Hero"
                             description="Complete everything in the app"
                             progressBar={TotalbadgesEarned/2.75}
@@ -130,7 +130,7 @@ const Achievements = () => {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {<BadgeCard
-                            image="../../public/Badges/lesson1.png"
+                            image="/public/Badges/lesson1.png"
                             title="Recycling Magician"
                             description="Complete Lesson 1"
                             earned={lessonsCompleted[0]}
@@ -138,7 +138,7 @@ const Achievements = () => {
                         />}
 
                         <BadgeCard
-                            image="../../public/Badges/lesson2.png"
+                            image="/public/Badges/lesson2.png"
                             title="Bin Sorting Hero"
                             description="Complete Lesson 2"
                             earned={lessonsCompleted[1]}
@@ -146,7 +146,7 @@ const Achievements = () => {
                         />
 
                         <BadgeCard
-                            image="../../public/Badges/lesson3.png"
+                            image="/public/Badges/lesson3.png"
                             title="Kitchen Eco Chef"
                             description="Complete Lesson 3"
                             earned={lessonsCompleted[2]}
@@ -154,7 +154,7 @@ const Achievements = () => {
                         />
 
                         <BadgeCard
-                            image="../../public/Badges/lesson4.png"
+                            image="/public/Badges/lesson4.png"
                             title="Eco Detective"
                             description="Complete Lesson 4"
                             earned={lessonsCompleted[3]}
@@ -172,14 +172,14 @@ const Achievements = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         
                         <BadgeCard
-                            image="../../public/Badges/level1.png"
+                            image="/public/Badges/level1.png"
                             title="Kitchen Master"
                             description="Finish Kitchen Level"
                             earned={gamesFinished[0]}
                             borderColor="border-yellow-300"
                         />
                         <BadgeCard
-                            image="../../public/Badges/level2.png"
+                            image="/public/Badges/level2.png"
                             title="School Scholar"
                             description="Finish School Level"
                             earned={gamesFinished[1]}
@@ -188,7 +188,7 @@ const Achievements = () => {
 
                         
                         <BadgeCard
-                            image="../../public/Badges/level3.png"
+                            image="/public/Badges/level3.png"
                             title="Park Guardian"
                             description="Finish Park Level"
                             earned={gamesFinished[2]}
@@ -197,7 +197,7 @@ const Achievements = () => {
 
                         
                         <BadgeCard
-                            image="../../public/Badges/level4.png"
+                            image="/public/Badges/level4.png"
                             title="City Hero"
                             description="Finish City Level"
                             earned={gamesFinished[3]}
