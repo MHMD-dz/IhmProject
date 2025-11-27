@@ -14,16 +14,16 @@ const Bottom = () => {
        
         <div className="flex justify-center gap-8 text-3xl mb-6">
           <a href="https://github.com/MHMD-dz" 
-          target="_blank" rel="noopener noreferrer"
-             className="bg-white text-gray-800 p-2.5 rounded-full hover:bg-gray-300 transition-all shadow-lg"
-             title="GitHub Profile">
+            target="_blank" rel="noopener noreferrer"
+              className="bg-white text-gray-800 p-2.5 rounded-full hover:bg-gray-300 transition-all shadow-lg"
+              title="GitHub Profile">
             <FaGithub />
           </a>
           
           <a href="https://www.linkedin.com/in/mohammed-benzineb-aa0b53310" 
-             target="_blank" rel="noopener noreferrer"
-             className="bg-white text-blue-600 p-2.5 rounded-full hover:bg-gray-300 transition-all shadow-lg"
-             title="LinkedIn Profile">
+              target="_blank" rel="noopener noreferrer"
+              className="bg-white text-blue-600 p-2.5 rounded-full hover:bg-gray-300 transition-all shadow-lg"
+              title="LinkedIn Profile">
             <FaLinkedin />
           </a>
           
@@ -32,7 +32,8 @@ const Bottom = () => {
              title="Send Email">
             <FaEnvelope />
           </a>
-          <a href="mailto:mhmdhayza@gmail.com" 
+          <a href="https://www.instagram.com/mhs_dz?igsh=MXdjdjM0YXl2eGgwcA==" 
+             target="_blank" rel="noopener noreferrer"
              className="bg-white text-red-500 p-2.5 rounded-full hover:bg-gray-300 transition-all shadow-lg"
              title="Instagram Profile">
             <FaInstagram />

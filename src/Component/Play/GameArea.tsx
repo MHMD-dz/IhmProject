@@ -88,7 +88,7 @@ const GameArea: React.FC<GameAreaProps> = ({ onStatsUpdate , levelId, restartTok
    const startGame = (isInitialStart: boolean) => {
     setScore(0);
     setLives(3);
-    setTimeLeft(600);
+    setTimeLeft(100);
     setIsPlaying(isInitialStart);
     setFallingItems([]); 
     };
@@ -235,7 +235,7 @@ useEffect(() => {
     const handleRestart = () => {
         setShowWinScreen(false);
         setShowLoseScreen(false);
-        startGame(false); 
+        startGame(true); 
     };
 
   return (

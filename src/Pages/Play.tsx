@@ -8,7 +8,7 @@ const Play = () => {
       <Title title="🎮 Let's Play 🎮" />
       <Laila 
           title="Let's Begin, Eco-Hero! 🦸"
-          text="Welcome back! Every level you complete makes Earth happier. Which environment would you like to clean up first?"
+          text="Welcome in the game section! Every level you complete makes Earth happier. Which environment would you like to clean up first?"
           lailaImage="/Laila/LailaPl.png"
           />
       <Levels/>

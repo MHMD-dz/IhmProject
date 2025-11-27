@@ -41,7 +41,13 @@ const WinScreen: React.FC<WinScreenProps> = ({ score, onRestart }) => {
               🏠 Home
             </button>
           </Link>
-          
+        <Link to="/Play"
+          className="w-full bg-blue-400 hover:bg-blue-500 text-white font-bold py-4 px-6 rounded-2xl text-lg transition-all"
+        >
+          <button >
+            🎮 Levels
+          </button>
+        </Link>  
 
         <button 
           onClick={onRestart}
@@ -49,6 +55,8 @@ const WinScreen: React.FC<WinScreenProps> = ({ score, onRestart }) => {
         >
           🔄 Play Again
         </button>
+        
+        
         </div>
 
       </div>
