@@ -16,7 +16,8 @@ const Lessons = () => {
 
       <Laila
         title={` Welcome to lesson ${lessonId} `}
-        text="Hello there, future eco-hero! 🌟 I'm Laila, and I'm so excited to be your recycling guide. Get ready for a fun adventure where we'll learn how to protect our amazing planet together. Let's become Earth's superheroes! 🦸‍♀️🌍!"
+        text="It's time to learn how to save our planet!
+              Pay close attention — read well if you want to pass the quiz and become a true recycling hero! 🦸‍♀️🌍"
         lailaImage="/Laila/LailaLrn.png"
       />
       

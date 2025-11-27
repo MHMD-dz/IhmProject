@@ -80,6 +80,7 @@ const QuizComp = ({ lessonId , time }: Props) => {
 
     const handleRestart = () => {
         setSelectedAnswers({});
+        setShowLoseScreen(false);
         setTimer(time);
     }
     const handleSubmit = () => {
@@ -119,9 +120,7 @@ const QuizComp = ({ lessonId , time }: Props) => {
                     style={{ width: `${percentage}%` }}
                 ></div>
             </div>
-            <div className="text-sm text-gray-500 mt-1">
-                Time Remaining and the scour is {correctCount}
-            </div>
+            
         </div>
 
         <div className="space-y-6">
@@ -165,8 +164,8 @@ const QuizComp = ({ lessonId , time }: Props) => {
             </button>
         </div>
         <div>
-            {showWinScreen && <WinQ onRestart={handleRestart} correctCount={correctCount} />}
-            {showLoseScreen && <LoseQ onRestart={handleRestart} correctCount={correctCount} />}
+            {showWinScreen && <WinQ  correctCount={correctCount} />}
+            {showLoseScreen && <LoseQ onRestart={handleRestart}  correctCount={correctCount} />}
         </div>
     </div>
   )

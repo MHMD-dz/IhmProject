@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 
 type Props = {
     correctCount : number ;
-    onRestart : () => void
 }
 
-const WinQ = ( { correctCount , onRestart} : Props ) => {
+const WinQ = ( { correctCount } : Props ) => {
     return (
     <div className="fixed inset-0 bg-green-300  flex items-center justify-center z-50">
       <div className="bg-white rounded-3xl p-8 text-center shadow-2xl max-w-[40vw] w-full mx-4">
@@ -29,7 +28,7 @@ const WinQ = ( { correctCount , onRestart} : Props ) => {
         <div>
           <Link to="/" >
             <button 
-            onClick={onRestart}
+            
             className="w-full text-2xl text-gray-800 bg-gray-300 hover:bg-gray-400  font-bold py-4 px-6 rounded-2xl  transition-all"
           >
             Home 🏠

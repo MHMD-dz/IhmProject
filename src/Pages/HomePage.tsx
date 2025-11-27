@@ -10,7 +10,7 @@ function HomePage() {
         <Title title="🌱 EcoKids 🌱" />
         <Laila 
             title="Hello, I am Laila! 👋" 
-            text="Welcome to EcoKids, your fun adventure in learning about recycling and protecting our beautiful planet! ,
+            text="Hello there, future eco-hero! 🌟 I'm Laila, and I'm so excited to be your recycling guide, your fun adventure in learning about recycling and protecting our beautiful planet! ,
                   Together we'll learn how to sort waste, recycle properly, and become true eco-heroes."
             lailaImage="/Laila/LailaWel.png" />
         <Choose/>

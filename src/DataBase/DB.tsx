@@ -202,7 +202,7 @@ export const lessonsData: LessonsData[] = [
             <p>Why here: Because they might be dangerous or can't be transformed.</p>
           </div>
         ),
-        image: '/Lessons/l12p3.png',
+        image: '/Lessons/l2p3.png',
       },
       {
         id: 4,
