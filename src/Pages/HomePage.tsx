@@ -7,11 +7,11 @@ function HomePage() {
   return (
     
       <div className="min-h-screen bg-linear-to-br from-green-400 to-blue-300  p-3 text-cente ">
-        <Title title="🌱 EcoKids 🌱" />
+        <Title title="🌿 Green-Visionaries 🌿" />
         <Laila 
             title="Hello, I am Laila! 👋" 
-            text="Hello there, future eco-hero! 🌟 I'm Laila, and I'm so excited to be your recycling guide, your fun adventure in learning about recycling and protecting our beautiful planet! ,
-                  Together we'll learn how to sort waste, recycle properly, and become true eco-heroes."
+            text="Hello, future Green-Visionary! 🌟 I'm Laila, your guide on this amazing adventure to protect our planet. Together,
+             we'll explore the magic of recycling, learn how to sort waste, and discover ways to turn trash into treasure! ♻️✨"
             lailaImage="/Laila/LailaWel.png" />
         <Choose/>
         <Bottom/>

@@ -7,7 +7,7 @@ const Play = () => {
     <div className="min-h-screen bg-linear-to-br from-blue-400 to-blue-200  p-3 text-cente ">
       <Title title="🎮 Let's Play 🎮" />
       <Laila 
-          title="Let's Begin, Eco-Hero! 🦸"
+          title="Let's Begin, Green-Visionary! 🦸‍♂️🌿"
           text="Welcome in the game section! Every level you complete makes Earth happier. Which environment would you like to clean up first?"
           lailaImage="/Laila/LailaPl.png"
           />
