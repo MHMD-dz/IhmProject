@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope, FaGraduationCap , FaInstagram } from 'react-icons/fa';
 
 const Bottom = () => {
   return (
@@ -32,6 +32,13 @@ const Bottom = () => {
              title="Send Email">
             <FaEnvelope />
           </a>
+          <a href="mailto:mhmdhayza@gmail.com" 
+             className="bg-white text-red-500 p-2.5 rounded-full hover:bg-gray-300 transition-all shadow-lg"
+             title="Instagram Profile">
+            <FaInstagram />
+          </a>
+          
+
         </div>
         
         
