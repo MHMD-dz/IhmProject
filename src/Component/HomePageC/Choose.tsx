@@ -26,7 +26,7 @@ const Choose = () => {
         <Link to="/Achievements"  className="flex-1 min-w-[200px] max-w-[300px] text-green-600 text-2xl font-bold p-8 bg-blue-100 rounded-2xl border-4 border-green-300 hover:bg-blue-200 hover:scale-105 transition-all shadow-md"
         >
           <button>
-            🏆 ACHIEVEMENTS
+            🏆ACHIEVEMENTS
           </button>
         </Link>
         <Link to="/Sittings"  className="flex-1 text-center min-w-[200px] max-w-[300px] text-green-600 text-2xl font-bold p-8 bg-blue-100 rounded-2xl border-4 border-green-300 hover:bg-blue-200 hover:scale-105 transition-all shadow-md"
