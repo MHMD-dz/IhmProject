@@ -50,11 +50,11 @@ export const parkItems: WasteItem[] = [
   { id: 15, name: 'Plastic Bag', type: 'trash', emoji: '🛍️' },
   { id: 16, name: 'Glass Bottle', type: 'recycling', emoji: '🍶' },
   { id: 17, name: 'Banana Peel', type: 'organic', emoji: '🍌' },
-  { id: 18, name: 'Chip Bag', type: 'trash', emoji: '🥔' },
+  { id: 18, name: 'Chip Bag', type: 'organic', emoji: '🥔' },
   { id: 37, name: 'Twig', type: 'organic', emoji: '🌿' },
   { id: 38, name: 'Soda Can', type: 'recycling', emoji: '🥫' },
   { id: 39, name: 'Snack Wrapper', type: 'trash', emoji: '🍫' },
-  { id: 40, name: 'Plastic Cup', type: 'trash', emoji: '🥤' },
+  { id: 40, name: 'Plastic Cup', type: 'recycling', emoji: '🥤' },
   { id: 41, name: 'Paper Napkin', type: 'recycling', emoji: '🧻' },
   { id: 42, name: 'Tree Bark', type: 'organic', emoji: '🌰' },
 ];
