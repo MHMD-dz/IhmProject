@@ -44,7 +44,7 @@ const Bottom = () => {
         
         
         <p className="text-sm opacity-90">
-          L3 Computer Science Project - EcoKids App
+          L3 Computer Science Project - Green Visionaries App
         </p>
       </div>
       
